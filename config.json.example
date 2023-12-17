@@ -1,0 +1,37 @@
+{
+    "webserver_db": {
+        "enabled": true,
+        "server": "serverx",
+        "port": 9543,
+        "username": "backup",
+        "authentication_method": "ssh_key",
+        "ssh_key_path": "/root/.ssh/id_rsa",
+        "source": "/opt/backup/db/",
+        "excludes": [".cache", "logs"],
+        "schedule": {"daily": true, "hourly": false, "monthly": true},
+        "use_sudo": false
+    },
+    "mailserver": {
+        "enabled": false,
+        "server": "mail.example.com",
+        "port": 22,
+        "username": "your_username",
+        "authentication_method": "password",
+        "password": "your_password",
+        "source": "/path/to/mailserver",
+        "excludes": ["temp"],
+        "schedule": {"daily": true, "hourly": true, "monthly": false},
+        "use_sudo": true
+    },
+    "dbserver": {
+        "enabled": false,
+        "server": "db.example.com",
+        "port": 22,
+        "username": "your_username",
+        "authentication_method": "password",
+        "password": "your_password",
+        "source": "/path/to/dbserver",
+        "excludes": ["backup_logs"],
+        "schedule": {"daily": false, "hourly": true, "monthly": true}
+    }
+}
