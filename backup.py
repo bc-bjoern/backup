@@ -39,7 +39,7 @@ def run_rsync(source, destination, server, port, username, authentication_method
             rsync_command.extend(["-e", f"ssh -p {port}", f"{username}@{server}:{source}", local_destination])
 
     # Run the rsync command using subprocess without setting RSYNC_PASSWORD
-    subprocess.run(rsync_command, shell=True)
+    subprocess.run(rsync_command)
 
     # Unset RSYNC_PASSWORD environment variable after rsync command
     os.environ.pop("RSYNC_PASSWORD", None)
