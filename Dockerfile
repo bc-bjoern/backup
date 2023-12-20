@@ -4,6 +4,9 @@ FROM python:3.9
 # Set the version as a build argument (default to "v1.0" if not provided)
 ARG VERSION=v1.0
 
+# Set the timezone
+ENV TZ=Europe/Berlin
+
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
