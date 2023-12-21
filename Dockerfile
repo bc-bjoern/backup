@@ -13,6 +13,7 @@ WORKDIR /usr/src/app
 # Copy the current directory contents into the container
 COPY backup.py .
 COPY requirements.txt . 
+RUN chmod u+x backup.py
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
