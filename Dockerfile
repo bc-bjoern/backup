@@ -32,7 +32,7 @@ RUN chmod 600 /root/.ssh/id_rsa
 
 # Set up cron job with environment variables
 RUN apt-get update && apt-get -y install cron \
-    && echo "0 0 * * * root /usr/local/bin/python3.9 /usr/src/app/backup.py" > /etc/cron.d/backup-cron \
+    && echo "0 0 * * * /usr/local/bin/python3.9 /usr/src/app/backup.py" > /etc/cron.d/backup-cron \
     && chmod 0644 /etc/cron.d/backup-cron \
     && crontab /etc/cron.d/backup-cron \
     && service cron start
