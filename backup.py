@@ -76,5 +76,6 @@ if __name__ == "__main__":
     with open("/backup/config.json", "r") as config_file:
         server_configurations = json.load(config_file)
 
-    destination = os.environ.get("BACKUP_DESTINATION")
+    # destination = os.environ.get("BACKUP_DESTINATION")
+    destination = '/backup'
     backup_servers(server_configurations, destination)
